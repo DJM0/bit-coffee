@@ -9,11 +9,27 @@
 module.exports = {
 
   attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
+
+    name: {
+      type: 'STRING',
+      required: true
+    },
+
+    email: {
+      type: 'STRING',
+      required: true
+    },
+
+    beans: {
+      type: 'decimal'
+    }
+
+  },
+
+  // Lifecycle Callbacks
+  beforeCreate: function(values, next) {
+    values.beans = 10.0;
+    next();
   }
 
 };

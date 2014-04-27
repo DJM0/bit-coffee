@@ -17,14 +17,40 @@
 
 module.exports = {
     
-  
+  run: function(req, res) {
 
+    People.findOne(req.param('user')).done(function (err, user) {
+      if (err) return res.send(err,500);
+      if (!user) return res.send("No user with that id exists!", 404);
+
+      Actions.findOne(req.param('action')).done(function (err, action) {
+        if (err) return res.send(err,500);
+        if (!action) return res.send("No action with that id exists!", 404);
+
+        var balance = Number(user.beans);
+        balance += Number(action['value']);
+
+        if (balance < 0) {
+          return res.send("Not enough beans! ☕️", 200);
+        } else {
+          user.beans = balance;
+
+          user.save(function (err) {
+            if (err) return res.send(err,500);
+            res.json(user);
+          });
+        }
+
+      });
+
+    });
+
+  },
 
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to ActionsController)
    */
   _config: {}
-
   
 };
