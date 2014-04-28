@@ -18,7 +18,7 @@
 module.exports = {
     
   run: function(req, res) {
-
+    
     People.findOne(req.param('user')).done(function (err, user) {
       if (err) return res.send(err,500);
       if (!user) return res.send("No user with that id exists!", 404);
@@ -31,7 +31,7 @@ module.exports = {
         balance += Number(action['value']);
 
         if (balance < 0) {
-          return res.send("Not enough beans! ☕️", 200);
+          return res.send("Not enough beans!", 200);
         } else {
           user.beans = balance;
 
