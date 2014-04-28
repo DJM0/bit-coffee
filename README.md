@@ -12,7 +12,7 @@
 
 HTTP API with JSON responses based around *CRUD*
 
-'http://127.0.0.1:1337/people/create?name=David Maitland&email=hello@davidmaitland.me'
+`http://127.0.0.1:1337/people/create?name=David Maitland&email=hello@davidmaitland.me`
 
     {
       "name": "David Maitland",
@@ -23,7 +23,7 @@ HTTP API with JSON responses based around *CRUD*
       "id": 1
     }
 
-'http://127.0.0.1:1337/people/create?name=Bob&email=bob@gmail.com'
+`http://127.0.0.1:1337/people/create?name=Bob&email=bob@gmail.com`
 
     {
       "name": "Bob",
@@ -34,7 +34,7 @@ HTTP API with JSON responses based around *CRUD*
       "id": 2
     }
 
-'http://127.0.0.1:1337/trades/create?name=Coffee&value=1'
+`http://127.0.0.1:1337/trades/create?name=Coffee&value=1`
 
     {
       "name": "Coffee",
@@ -44,9 +44,9 @@ HTTP API with JSON responses based around *CRUD*
       "id": 1
     }
 
-'http://127.0.0.1:1337/trades/buy?item=1&seller=1&buyer=2'
+`http://127.0.0.1:1337/trades/buy?item=1&seller=1&buyer=2`
 
-'http://127.0.0.1:1337/people/'
+`http://127.0.0.1:1337/people/`
 
     [
       {
